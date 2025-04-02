@@ -19,6 +19,11 @@ void static ahhShitHereWeGoAgain() {
 
 int static characterdesign2() {
     game::CS::CreateStartMEM("start", "ABCD");
+
+    game::DelayedPrinter printer(10);
+    printer.printWithDelay(" Looks like you chosed your race to be Thiren");
+    printer.printWithDelay("now you will get assigned random amount of points to each charisma, body phisuice")
+
     return 0;
 }
 
@@ -63,13 +68,13 @@ int static characterdesign() {
 int main() {
 
 
-    if (!CheckFileAndContinueToNextPhase("start.jfif", "ABCD"))
+   /* if (!CheckFileAndContinueToNextPhase("start.jfif", "ABCD"))
         game::CS::CreateStartMEM("start", "ABCD");
     else if (CheckFileAndContinueToNextPhase("start.jfif", "ABCD"))
         ahhShitHereWeGoAgain();
 
     game::showMessageBox("siema", "siema");
-
+    */
     game::DelayedPrinter printer(1);
     printer.printWithDelay("Welcome to the game \033[1;32;41m`I still haven't named it`\033[0m, it is a text-based RPG written on the so-called \033[35m`knee`\033[0m");
     printer.printWithDelay("Type \033[1;32;41m`Start`\033[0m with a capital letter to start the game\nor \033[1;32;41m`Exit`\033[0m also with a capital letter to exit the game");
