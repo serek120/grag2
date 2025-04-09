@@ -22,9 +22,9 @@ int static characterdesign2() {
 
     game::DelayedPrinter printer(10);
     printer.printWithDelay(" Looks like you chosed your race to be Thiren");
-    printer.printWithDelay("now you will get assigned random amount of points to each charisma, body phisuice")
+    printer.printWithDelay( "now you will get assigned random amount of points to each charisma, body phisuice" );
 
-    return 0;
+    return ERROR;
 }
 
 int static characterdesign() {
@@ -66,6 +66,8 @@ int static characterdesign() {
 }
 
 int main() {
+
+    ShowEQ();
 
 
    /* if (!CheckFileAndContinueToNextPhase("start.jfif", "ABCD"))

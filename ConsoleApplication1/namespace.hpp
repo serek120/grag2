@@ -2,6 +2,7 @@
 #define GAME_HPP
 
 #include <string>
+#include <array>
 #include <chrono>
 #include <thread>
 #include <cstdio>
@@ -9,6 +10,9 @@
 #include <iostream>
 #include <fstream>
 #include <filesystem>
+#include "arrays.cpp"
+
+
 
 
 extern bool isThiren;
