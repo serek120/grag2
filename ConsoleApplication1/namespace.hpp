@@ -10,15 +10,11 @@
 #include <iostream>
 #include <fstream>
 #include <filesystem>
-#include "arrays.cpp"
-
-
-
 
 extern bool isThiren;
 extern bool isHuman;
 
-namespace game {
+namespace game {  // Start of namespace game::
     class DelayedPrinter {
     public:
         explicit DelayedPrinter(int delay_ms)
@@ -51,16 +47,16 @@ namespace game {
         std::cout << "\033[1;32mDone\033[0m" << std::endl;
     }
 
-    void cls(int delay) {
+    void cls(int delay) { // clearing the screen
         std::this_thread::sleep_for(std::chrono::milliseconds(delay));
-        system("cls");
+        system("cls"); 
     }
 
-    void sleep_for(int delay_ms_) {
+    void sleep_for(int delay_ms_) { // waiting
         std::this_thread::sleep_for(std::chrono::milliseconds(delay_ms_));
     }
 
-    void sequence(int time, int time2) {
+    void sequence(int time, int time2) { // waiting sequence
         game::cls(time2);
         game::loading(time);
         game::cls(time2);
@@ -68,13 +64,13 @@ namespace game {
 
     #include <Windows.h>
 
-    std::wstring convertToWideString(const char* narrowStr) {
+    std::wstring convertToWideString(const char* narrowStr) { // converts char to Wstring for usage in other functions
         int len = MultiByteToWideChar(CP_UTF8, 0, narrowStr, -1, NULL, 0);
         std::wstring wideStr(len, 0);
         MultiByteToWideChar(CP_UTF8, 0, narrowStr, -1, &wideStr [0], len);
         return wideStr;
     }
-
+    /*
     void showMessageBox(const char* title, const char* message) {
         std::thread([title, message]() {
             std::wstring wTitle = convertToWideString(title);
@@ -89,8 +85,8 @@ namespace game {
             }
             }).join();
     }
-
-					// makes a file and opens its  for scarying the player
+    */
+					// makes a file and opens its for scarying the player
     void scaryfile(const std::string& filename, const std::string& filecontent) {
         std::string filepath = std::filesystem::current_path().string() + "/" + filename + ".txt";
         std::ofstream file(filepath);
@@ -103,7 +99,7 @@ namespace game {
             std::cerr << "Failed to create file: " << filepath << std::endl;
         }
     }
-
+    /*    dont work 
     // Function to open the file based on the OS
     void openFile(const std::string& filename) {
         std::string filepath = std::filesystem::current_path().string() + "/" + filename + ".txt";
@@ -115,6 +111,8 @@ namespace game {
         system(command.c_str());
 #endif
     }
+    */
+
 	// Showing fake UAC prompt (for some purpose is needed there)
     void showFakeUAC() {
         SHELLEXECUTEINFO sei = { sizeof(sei) };
@@ -147,9 +145,9 @@ namespace game {
             criterrorThread.join();
         }
 
-    } // End of namespace Tthrd
+    } // End of namespace Thrd
 
-    namespace CS {
+    namespace CS { // start of namespace game::CS
         void CreateStartMEM(const std::string& Filename, const std::string Exp_Phrase) {
             std::ofstream File(Filename);
             File << Exp_Phrase;

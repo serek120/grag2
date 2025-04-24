@@ -4,6 +4,7 @@
 #include "booleans.cpp"
 #include <Windows.h>
 #include <shellapi.h>
+#include "player.cpp"
 
 char buffer[256];
 
@@ -28,6 +29,15 @@ int static characterdesign2() {
 }
 
 int static characterdesign() {
+
+    /* if (!CheckFileAndContinueToNextPhase("start.jfif", "ABCD"))
+      game::CS::CreateStartMEM("start", "ABCD");
+  else if (CheckFileAndContinueToNextPhase("start.jfif", "ABCD"))
+      ahhShitHereWeGoAgain();
+
+  game::showMessageBox("siema", "siema");
+  */
+
     game::DelayedPrinter printer(30);
     printer.printWithDelay("----Race you choose may unlock or block some dialogues in the game----");
     printer.printWithDelay("there are two main races dominant among humans, you can choose what race you are");
@@ -67,16 +77,13 @@ int static characterdesign() {
 
 int main() {
 
-    ShowEQ();
+    Structure_stats S_Stat;
+    
+
+    std::cout << 
 
 
-   /* if (!CheckFileAndContinueToNextPhase("start.jfif", "ABCD"))
-        game::CS::CreateStartMEM("start", "ABCD");
-    else if (CheckFileAndContinueToNextPhase("start.jfif", "ABCD"))
-        ahhShitHereWeGoAgain();
 
-    game::showMessageBox("siema", "siema");
-    */
     game::DelayedPrinter printer(1);
     printer.printWithDelay("Welcome to the game \033[1;32;41m`I still haven't named it`\033[0m, it is a text-based RPG written on the so-called \033[35m`knee`\033[0m");
     printer.printWithDelay("Type \033[1;32;41m`Start`\033[0m with a capital letter to start the game\nor \033[1;32;41m`Exit`\033[0m also with a capital letter to exit the game");
