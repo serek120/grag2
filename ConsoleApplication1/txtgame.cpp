@@ -6,6 +6,8 @@
 #include <shellapi.h>
 #include "player.cpp"
 
+
+
 char buffer[256];
 
 bool isThiren = false;
@@ -77,12 +79,8 @@ int static characterdesign() {
 
 int main() {
 
-    Structure_stats S_Stat;
+    Stats::Structure_stats __S_Stat;
     
-
-    std::cout << 
-
-
 
     game::DelayedPrinter printer(1);
     printer.printWithDelay("Welcome to the game \033[1;32;41m`I still haven't named it`\033[0m, it is a text-based RPG written on the so-called \033[35m`knee`\033[0m");
