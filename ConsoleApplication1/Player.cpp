@@ -4,20 +4,13 @@
 #include <time.h>
 
 
-struct Structure_stats {
-
-	int m_iCharacterPoints = rand() % 10 + 5;
-
-
-
-	class Class_Stats {
-	public:
+namespace Stats { // Start of namespace Stats::
+	struct Structure_stats {
+		int m_iCharacterPoints = rand() % 30 + 15;
+		// Skill's
 		int m_iCharisma;
-		int m_iDefence;
-		int m_iAttack;
 		int m_iAgility;
-	};
-
-
-
-} PlayerStats;
+		int m_iBodyBuilding;
+		int m_iTechnicalAbilities;
+	} PlayerStats;
+} // End of namespace Stats::
